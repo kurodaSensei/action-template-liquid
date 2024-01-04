@@ -11,5 +11,5 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 #MODIFIED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E "\.(liquid|json)$")
 
 echo xargs theme-check -o json \
-  | reviewdog -f=rdjson -name="theme-check" -reporter=github-pr-check
+  | reviewdog -efm="%f:%l: %m,%-G%.%#" -name="theme-check" -reporter=github-pr-check
 
