@@ -30,10 +30,10 @@ inputs:
     default: ''
   event:
     description: 'The webhook event that triggered the workflow'
-    default: ${{ github.event.before }}
+    default: '${{ github.event.before }}'
   sha:
     description: 'The commit SHA that triggered the workflow'
-    default: ${{ github.sha }}
+    default: '${{ github.sha }}'
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -8,7 +8,7 @@ ENV REVIEWDOG_VERSION=v0.15.0
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 # Install necessary packages and tools
-RUN apk --no-cache add git ruby ruby-dev ruby-etc build-base
+RUN apk add git ruby ruby-dev ruby-etc build-base
 
 # Download and install Reviewdog
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
