@@ -8,8 +8,8 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-#MODIFIED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E "\.(liquid|json)$")
+MODIFIED_FILES=$(git diff --name-only ${ INPUT_EVENT } ${ INPUT_SHA } | grep -E "\.(liquid|json)$")
 
-echo xargs theme-check -o json \
+echo "$MODIFIED_FILES" | xargs theme-check -o json \
   | reviewdog -efm="%f:%l: %m,%-G%.%#" -name="theme-check" -reporter=github-pr-check
 

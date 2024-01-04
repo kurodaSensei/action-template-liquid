@@ -28,6 +28,12 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
+  event:
+    description: 'The webhook event that triggered the workflow'
+    default: ${{ github.event.before }}
+  sha:
+    description: 'The commit SHA that triggered the workflow'
+    default: ${{ github.sha }}
 runs:
   using: 'docker'
   image: 'Dockerfile'
