@@ -30,7 +30,7 @@ inputs:
     default: ''
   event:
     description: 'The webhook event that triggered the workflow'
-    default: '${{ github.event.before }}'
+    default: '${{ github.event.pull_request.head.sha }}'
   sha:
     description: 'The commit SHA that triggered the workflow'
     default: '${{ github.sha }}'
