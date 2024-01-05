@@ -8,5 +8,4 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-theme-check -o json . 
-#| reviewdog -efm="%f:%l: %m,%-G%.%#" -name="theme-check" -reporter=github-pr-check
+theme-check . | reviewdog -efm="%f:%l: %m,%-G%.%#" -name="theme-check" -reporter=github-pr-check
