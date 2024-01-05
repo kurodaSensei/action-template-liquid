@@ -8,4 +8,4 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-theme-check . | reviewdog -efm="%f:%l: %m,%-G%.%#" -name="theme-check" -reporter=github-pr-check
+theme-check . | reviewdog -efm="%f:%l: %m,%-G%.%#" -diff="git diff main" -name="theme-check" -reporter=github-pr-check
